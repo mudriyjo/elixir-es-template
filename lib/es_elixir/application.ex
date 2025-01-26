@@ -2,7 +2,6 @@ defmodule EsElixir.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
-
   use Application
 
   @impl true
@@ -17,7 +16,8 @@ defmodule EsElixir.Application do
       # Start a worker by calling: EsElixir.Worker.start_link(arg)
       # {EsElixir.Worker, arg},
       # Start to serve requests, typically the last entry
-      EsElixirWeb.Endpoint
+      EsElixirWeb.Endpoint,
+      EsElixir.Commander
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

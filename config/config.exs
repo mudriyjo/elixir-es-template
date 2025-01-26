@@ -22,6 +22,16 @@ config :es_elixir, EsElixirWeb.Endpoint,
   pubsub_server: EsElixir.PubSub,
   live_view: [signing_salt: "bC36jH68"]
 
+config :es_elixir, EsElixir.EventStore,
+  serializer: Commanded.Serialization.JsonSerializer,
+  username: "postgres",
+  password: "123",
+  database: "es_main",
+  hostname: "localhost",
+  pool_size: 10
+
+config :es_elixir, event_stores: [EsElixir.EventStore]
+
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails

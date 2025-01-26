@@ -20,6 +20,12 @@ defmodule EsElixirWeb.Router do
     get "/", PageController, :home
   end
 
+  scope "/api", EsElixirWeb do
+    pipe_through :api
+
+    post "/user", UserController, :create
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", EsElixirWeb do
   #   pipe_through :api

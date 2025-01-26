@@ -1,4 +1,5 @@
 defmodule EsElixir.Aggregate.User do
+  @derive Jason.Encoder
   defstruct [:user_id, :name, :email]
 
   def execute(%__MODULE__{}, %EsElixir.Command.CreateUser{} = command) do
